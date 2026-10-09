@@ -30,8 +30,8 @@ sudo -u postgres psql -X -v ON_ERROR_STOP=1 -d db_challenge -f scripts/02_insegu
 # Establecer secreto aleatorio usando sustitución de psql con escape SQL seguro.
 sudo -u postgres psql -X -v ON_ERROR_STOP=1 -c "ALTER ROLE dc_verificador PASSWORD '$SECRET';"
 cat > .env <<ENV
-PORT=3000
-HOST=127.0.0.1
+PORT=8080
+HOST=0.0.0.0
 PGHOST=127.0.0.1
 PGPORT=5432
 PGDATABASE=db_challenge
